@@ -1,0 +1,169 @@
+{
+  "validation": {
+    "shape": [8336, 13],
+    "columns": ["EmployeeNumber", "Surname", "GivenName", "Gender", "City", "JobTitle", "DepartmentName", "StoreLocation", "Division", "Age", "LengthService", "AbsentHours", "BusinessUnit"],
+    "dtypes": ["numeric", "character", "character", "character", "character", "character", "character", "character", "character", "numeric", "numeric", "numeric", "character"],
+    "missing_values": {
+      "EmployeeNumber": 0,
+      "Surname": 0,
+      "GivenName": 0,
+      "Gender": 0,
+      "City": 0,
+      "JobTitle": 0,
+      "DepartmentName": 0,
+      "StoreLocation": 0,
+      "Division": 0,
+      "Age": 0,
+      "LengthService": 0,
+      "AbsentHours": 0,
+      "BusinessUnit": 0
+    },
+    "duplicate_rows": 0,
+    "duplicate_employee_numbers": 0,
+    "unique_counts": {
+      "EmployeeNumber": 8336,
+      "Surname": 4051,
+      "GivenName": 1625,
+      "Gender": 2,
+      "City": 243,
+      "JobTitle": 47,
+      "DepartmentName": 21,
+      "StoreLocation": 40,
+      "Division": 6,
+      "Age": 8298,
+      "LengthService": 8301,
+      "AbsentHours": 7016,
+      "BusinessUnit": 2
+    },
+    "negative_numeric_values": {
+      "EmployeeNumber": 0,
+      "Age": 0,
+      "LengthService": 0,
+      "AbsentHours": 0
+    },
+    "impossible_age_records": 34,
+    "service_greater_than_age": 1,
+    "zero_absent_hours": 1320,
+    "target_iqr_high_outliers": 44
+  },
+  "target_summary": [
+    {
+      "mean": 61.284,
+      "median": 56.0058,
+      "std": 49.0384,
+      "skewness": 0.642,
+      "zero_percentage": 15.8349,
+      "coefficient_of_variation": 0.8002
+    }
+  ],
+  "model_comparison": [
+    {
+      "Model": "LASSO",
+      "CV_MAE": 20.6656,
+      "CV_RMSE": 26.2229,
+      "Test_MAE": 20.4457,
+      "Test_RMSE": 26.2151,
+      "Test_R2": 0.7074,
+      "Interpretability": "Moderate"
+    },
+    {
+      "Model": "ElasticNet",
+      "CV_MAE": 20.7214,
+      "CV_RMSE": 26.3026,
+      "Test_MAE": 20.4892,
+      "Test_RMSE": 26.2644,
+      "Test_R2": 0.7063,
+      "Interpretability": "Moderate"
+    },
+    {
+      "Model": "MultipleLinearRegression",
+      "CV_MAE": 20.8116,
+      "CV_RMSE": 26.4479,
+      "Test_MAE": 20.553,
+      "Test_RMSE": 26.32,
+      "Test_R2": 0.705,
+      "Interpretability": "High"
+    },
+    {
+      "Model": "Ridge",
+      "CV_MAE": 21.5967,
+      "CV_RMSE": 27.2214,
+      "Test_MAE": 21.569,
+      "Test_RMSE": 27.4995,
+      "Test_R2": 0.678,
+      "Interpretability": "Moderate"
+    }
+  ],
+  "pca": [
+    {
+      "Component": 1,
+      "ExplainedVariance": 0.6101,
+      "CumulativeExplainedVariance": 0.6101
+    },
+    {
+      "Component": 2,
+      "ExplainedVariance": 0.3352,
+      "CumulativeExplainedVariance": 0.9453
+    },
+    {
+      "Component": 3,
+      "ExplainedVariance": 0.0547,
+      "CumulativeExplainedVariance": 1
+    }
+  ],
+  "pca_model_comparison": [
+    {
+      "Model": "Numeric baseline: Age + LengthService",
+      "R2": 0.6971,
+      "AdjustedR2": 0.697,
+      "Recommendation": "Retain original variables for interpretability"
+    },
+    {
+      "Model": "PCA: PC1 + PC2",
+      "R2": 0.9186,
+      "AdjustedR2": 0.9185,
+      "Recommendation": "Use only if dimension reduction is necessary"
+    }
+  ],
+  "regression_diagnostics": [
+    {
+      "Model": "OLS: Age + LengthService",
+      "Observations": 8336,
+      "R2": 0.6971,
+      "AdjustedR2": 0.697,
+      "BreuschPaganLM": 266.8982,
+      "BreuschPaganPValue": 1.1061e-58,
+      "JarqueBera": 116.3603,
+      "JarqueBeraPValue": 5.4036e-26,
+      "ResidualSkewness": 0.0928,
+      "ResidualKurtosis": 3.5482,
+      "DurbinWatson": 1.9912,
+      "MaxCookDistance": 0.0804,
+      "HighLeverageCount": 427
+    }
+  ],
+  "age_sensitivity": [
+    {
+      "AnalysisSet": "All records",
+      "Records": 8336,
+      "MeanAbsentHours": 61.284,
+      "MedianAbsentHours": 56.0058,
+      "AgeAbsentHoursPearsonR": 0.8302,
+      "AgeCoefficient": 4.1192,
+      "AgePValue": 0,
+      "OLS_R2": 0.6971,
+      "FlaggedRecordsExcluded": 0
+    },
+    {
+      "AnalysisSet": "Exclude flagged age/service records",
+      "Records": 8302,
+      "MeanAbsentHours": 61.535,
+      "MedianAbsentHours": 56.3026,
+      "AgeAbsentHoursPearsonR": 0.8331,
+      "AgeCoefficient": 4.1992,
+      "AgePValue": 0,
+      "OLS_R2": 0.702,
+      "FlaggedRecordsExcluded": 34
+    }
+  ]
+}

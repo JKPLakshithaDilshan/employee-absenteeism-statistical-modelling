@@ -1,0 +1,47 @@
+{
+  "shape": [8336, 13],
+  "columns": ["EmployeeNumber", "Surname", "GivenName", "Gender", "City", "JobTitle", "DepartmentName", "StoreLocation", "Division", "Age", "LengthService", "AbsentHours", "BusinessUnit"],
+  "dtypes": ["numeric", "character", "character", "character", "character", "character", "character", "character", "character", "numeric", "numeric", "numeric", "character"],
+  "missing_values": {
+    "EmployeeNumber": 0,
+    "Surname": 0,
+    "GivenName": 0,
+    "Gender": 0,
+    "City": 0,
+    "JobTitle": 0,
+    "DepartmentName": 0,
+    "StoreLocation": 0,
+    "Division": 0,
+    "Age": 0,
+    "LengthService": 0,
+    "AbsentHours": 0,
+    "BusinessUnit": 0
+  },
+  "duplicate_rows": 0,
+  "duplicate_employee_numbers": 0,
+  "unique_counts": {
+    "EmployeeNumber": 8336,
+    "Surname": 4051,
+    "GivenName": 1625,
+    "Gender": 2,
+    "City": 243,
+    "JobTitle": 47,
+    "DepartmentName": 21,
+    "StoreLocation": 40,
+    "Division": 6,
+    "Age": 8298,
+    "LengthService": 8301,
+    "AbsentHours": 7016,
+    "BusinessUnit": 2
+  },
+  "negative_numeric_values": {
+    "EmployeeNumber": 0,
+    "Age": 0,
+    "LengthService": 0,
+    "AbsentHours": 0
+  },
+  "impossible_age_records": 34,
+  "service_greater_than_age": 1,
+  "zero_absent_hours": 1320,
+  "target_iqr_high_outliers": 44
+}

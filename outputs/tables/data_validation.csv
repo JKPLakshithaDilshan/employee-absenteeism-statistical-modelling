@@ -1,0 +1,2 @@
+Rows,Columns,MissingValues,DuplicateRows,DuplicateEmployeeNumbers,ImpossibleAgeRecords,ServiceGreaterThanAge,ZeroAbsentHours,NegativeNumericValues
+8336,13,0,0,0,34,1,1320,0

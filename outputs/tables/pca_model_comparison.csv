@@ -1,0 +1,3 @@
+Model,R2,AdjustedR2,Recommendation
+Numeric baseline: Age + LengthService,0.697105911140224,0.697033213650998,Retain original variables for interpretability
+PCA: PC1 + PC2,0.9185518675576699,0.9185323192239504,Use only if dimension reduction is necessary

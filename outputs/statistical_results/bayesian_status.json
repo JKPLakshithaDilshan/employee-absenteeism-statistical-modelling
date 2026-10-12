@@ -1,0 +1,15 @@
+{
+  "Status": "evaluated_not_fitted",
+  "Outcome": "AbsentHours",
+  "NaiveBayes": "Not suitable as the primary method because it is a classification model while AbsentHours is continuous.",
+  "BayesianRegression": {
+    "Likelihood": "Normal or Student-t regression for continuous AbsentHours",
+    "Priors": "Weakly informative Normal(0, 10) coefficients and half-Normal(0, 10) residual scale after standardisation",
+    "Posterior": "Would provide coefficient posterior distributions and 95% credible intervals",
+    "Sensitivity": "Compare weakly informative priors with tighter Normal(0, 2.5) priors"
+  },
+  "DecisionMaking": "Use posterior predictive distributions for aggregate staffing decisions, not automatic individual sanctions.",
+  "Advantages": "Prior information, uncertainty propagation, partial pooling, and direct probability statements.",
+  "Limitations": "Requires justified priors, MCMC diagnostics, computation, and longitudinal or contextual data for hierarchical extensions.",
+  "ReasonNotFitted": "The assignment requires critical evaluation; no defensible prior elicitation or approved organizational decision threshold is available."
+}

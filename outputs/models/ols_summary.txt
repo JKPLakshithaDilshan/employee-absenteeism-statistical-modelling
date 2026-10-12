@@ -1,0 +1,21 @@
+
+Call:
+lm(formula = as.formula(paste(TARGET, "~ Age + LengthService")), 
+    data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-170.903  -18.134   -0.776   17.802  106.170 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -103.31955    1.38099  -74.81   <2e-16 ***
+Age              4.11919    0.02979  138.29   <2e-16 ***
+LengthService   -1.76285    0.12021  -14.66   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 26.99 on 8333 degrees of freedom
+Multiple R-squared:  0.6971,	Adjusted R-squared:  0.697 
+F-statistic:  9589 on 2 and 8333 DF,  p-value: < 2.2e-16
+
