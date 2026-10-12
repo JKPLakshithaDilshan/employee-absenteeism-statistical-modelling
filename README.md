@@ -4,7 +4,7 @@ Statistical modelling consultancy project for analysing employee absenteeism in 
 
 This work was completed for **IT3081 - Statistical Modelling** under the **BSc (Hons) Data Science** degree programme at the Department of Computer Science, Faculty of Computing, Sri Lanka Institute of Information Technology (SLIIT).
 
-![Project poster](assets/linkedin-employee-absenteeism-poster-option-2.png)
+![Project poster](assets/img.png)
 
 ## Repository Description
 
